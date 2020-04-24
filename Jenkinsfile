@@ -1,10 +1,14 @@
+@Library(Jenkins-Library@master) _
 pipeline {
     agent any
     stages {
         stage('Build') {
             steps {
                 echo "Hello World"
-                bat 'pwd'
+                sh """
+		           pwd
+		           ls -lart
+	              """
             }
         }
     }
